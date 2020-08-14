@@ -1,4 +1,4 @@
-package com.example.a18876311581.coolweather;
+package com.example.a18876311581.coolweather.db;
 
 /**
  * Created by 18876311581 on 2020/8/14.
