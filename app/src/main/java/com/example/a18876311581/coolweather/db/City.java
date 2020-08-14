@@ -3,8 +3,8 @@ package com.example.a18876311581.coolweather.db;
 /**
  * Created by 18876311581 on 2020/8/14.
  */
-
-public class City {
+import org.litepal.crud.DataSupport;
+public class City extends DataSupport {
     private int id;
     private String cityName;//市名字
     private int cityCode;//市代号
