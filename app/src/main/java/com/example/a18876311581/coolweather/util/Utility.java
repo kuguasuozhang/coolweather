@@ -36,10 +36,10 @@ public class Utility {
         return false;
     }
 
-    public static boolean handleCityResponse(String reponse, int provinceId){
-        if(!TextUtils.isEmpty(reponse)){
+    public static boolean handleCityResponse(String response, int provinceId){
+        if(!TextUtils.isEmpty(response)){
             try {
-                JSONArray allCities=new JSONArray(reponse);
+                JSONArray allCities=new JSONArray(response);
                 for (int i=0;i<allCities.length();i++){
                     JSONObject cityObject=allCities.getJSONObject(i);
                     City city=new City();
@@ -55,10 +55,10 @@ public class Utility {
         }
         return  false;
     }
-    public static boolean handleCountResponse(String reponse,int cityId){
-        if(!TextUtils.isEmpty(reponse)){
+    public static boolean handleCountResponse(String response,int cityId){
+        if(!TextUtils.isEmpty(response)){
             try{
-                JSONArray allCounties=new JSONArray(reponse);
+                JSONArray allCounties=new JSONArray(response);
                 for(int i=0;i<allCounties.length();i++){
                     JSONObject countyObject=allCounties.getJSONObject(i);
                     County county=new County();

@@ -102,6 +102,7 @@ public class ChooseAreaFragment extends Fragment {
     }
 
 
+
     @Override
     public void onActivityCreated( Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -230,14 +231,12 @@ public class ChooseAreaFragment extends Fragment {
                     @Override
                     public void run() {
                         closeProgressDialog();
-                        Toast.makeText(getContext(), "加载失败", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "加载失败", Toast.LENGTH_LONG).show();
                     }
                 });
             }
         });
     }
-
-
 
 
     private void showProgressDialog(){
@@ -256,6 +255,15 @@ public class ChooseAreaFragment extends Fragment {
         if (progressDialog != null){
             progressDialog.dismiss();
         }
+        progressDialog.show();
     }
+
+    /*@Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (progressDialog != null){
+            progressDialog.dismiss();
+        }
+    }*/
 }
 
