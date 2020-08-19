@@ -1,5 +1,6 @@
 package com.example.a18876311581.coolweather;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.a18876311581.coolweather.gson.Forecast;
 import com.example.a18876311581.coolweather.gson.Weather;
+import com.example.a18876311581.coolweather.service.AutoUpdataService;
 import com.example.a18876311581.coolweather.util.HttpUtil;
 import com.example.a18876311581.coolweather.util.Utility;
 
@@ -147,6 +149,7 @@ public class WeatherActivity extends AppCompatActivity {
                             SharedPreferences.Editor editor=PreferenceManager.getDefaultSharedPreferences(WeatherActivity.this).edit();
                             editor.putString("weather",responseText);
                             editor.apply();
+                            mWeatherId=weather.basic.weatherId;
                             showWeatherInfo(weather);
                         }else{
                             Toast.makeText(WeatherActivity.this,"天气信息失败",Toast.LENGTH_SHORT).show();
@@ -228,6 +231,9 @@ public class WeatherActivity extends AppCompatActivity {
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
 
+        weatherLayout.setVisibility(View.VISIBLE);//将ScollView显示
+        Intent intent = new Intent(this, AutoUpdataService.class);
+        startService(intent);
 
     }
 }
